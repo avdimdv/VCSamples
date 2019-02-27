@@ -174,7 +174,7 @@ HRESULT CMethodInfo::Init( ITypeInfo* pTypeInfo, const FUNCDESC* pFuncDesc )
 	  {
 		 // This must be the right-hand side of a property put or putref.
 		 LOAD_STRING_FROM_RESOURCE( strPropertyValue, IDS_PROPERTYVALUE );
-		 pszParamName = T2OLE_EX_DEF( LPCTSTR( strPropertyValue ) );
+		 pszParamName = T2OLE_EX_DEF( (LPTSTR) LPCTSTR( strPropertyValue ) );
 	  }
 	  else
 	  {

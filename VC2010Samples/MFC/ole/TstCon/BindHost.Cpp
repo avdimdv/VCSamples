@@ -155,7 +155,7 @@ STDMETHODIMP CTCBindHost::MonikerBindToStorage( IMoniker* pMoniker,
    HRESULT hResult;
    IBindCtxPtr pNewBindCtx;
 
-   TCTrace( TRACELEVEL_NORMAL, "IBindHost::MonikerBindToStorage\n" );
+   TCTrace( TRACELEVEL_NORMAL, _T("IBindHost::MonikerBindToStorage\n") );
 
    if( ppObject == NULL )
    {

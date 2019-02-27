@@ -143,7 +143,7 @@ HRESULT CScriptManager::GetItemDispatch( LPCTSTR pszItemName,
 
    *ppDispatch = NULL;
 
-   if( strcmp( pszItemName, "TCForm" ) == 0 )
+   if(_tcscmp( pszItemName, _T("TCForm") ) == 0 )
    {
 	  *ppDispatch = m_pDoc->GetIDispatch( TRUE );
 	  return( S_OK );
@@ -175,7 +175,7 @@ HRESULT CScriptManager::GetItemTypeInfo( LPCTSTR pszItemName,
 
    *ppTypeInfo = NULL;
 
-   if( strcmp( pszItemName, "TCForm" ) == 0 )
+   if(_tcscmp( pszItemName, _T("TCForm") ) == 0 )
    {
 	  hResult = m_pDoc->GetTypeInfoOfGuid( GetUserDefaultLCID(),
 		 __uuidof( Document ), ppTypeInfo );

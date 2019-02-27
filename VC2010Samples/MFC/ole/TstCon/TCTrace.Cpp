@@ -44,7 +44,7 @@ void __cdecl TCControlTrace( int nLevel, CTestContainer98Item* pItem,
    }
 
    strItemName = pItem->GetDisplayName();
-   sprintf_s( szBuffer, 512, "TestCon: %s: ", LPCTSTR( strItemName ) );
+   _stprintf_s( szBuffer, 512, _T("TestCon: %s: "), LPCTSTR( strItemName ) );
    OutputDebugString( szBuffer );
 
    nBuf = _vstprintf_s( szBuffer, 512, pszFormat, args );

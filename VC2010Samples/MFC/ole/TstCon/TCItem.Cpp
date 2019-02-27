@@ -70,7 +70,7 @@ IUnknown* CTestContainer98Item::GetInterfaceHook( const void* pv )
 
    if( *piid == m_infoEvents.GetIID() )
    {
-	  TCControlTrace( TRACELEVEL_NORMAL, this, "QI for event handler.\n" );
+	  TCControlTrace( TRACELEVEL_NORMAL, this, _T("QI for event handler.\n") );
 	  return( &m_xEventHandler );
    }
    else if( *piid == IID_IOleInPlaceSiteEx )
@@ -78,7 +78,7 @@ IUnknown* CTestContainer98Item::GetInterfaceHook( const void* pv )
 	  if( GetDocument()->SupportsInterface( IID_IOleInPlaceSiteEx ) )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"QI for IOleInPlaceSiteEx.\n" );
+			_T("QI for IOleInPlaceSiteEx.\n") );
 		 return( &m_xOleInPlaceSiteWindowless );
 	  }
    }
@@ -87,7 +87,7 @@ IUnknown* CTestContainer98Item::GetInterfaceHook( const void* pv )
 	  if( GetDocument()->SupportsInterface( IID_IOleInPlaceSiteWindowless ) )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"QI for IOleInPlaceSiteWindowless.\n" );
+			_T("QI for IOleInPlaceSiteWindowless.\n") );
 		 return( &m_xOleInPlaceSiteWindowless );
 	  }
    }
@@ -95,7 +95,7 @@ IUnknown* CTestContainer98Item::GetInterfaceHook( const void* pv )
    {
 	  if( GetDocument()->SupportsInterface( IID_IAdviseSinkEx ) )
 	  {
-		 TCControlTrace( TRACELEVEL_NORMAL, this, "QI for IAdviseSinkEx.\n" );
+		 TCControlTrace( TRACELEVEL_NORMAL, this, _T("QI for IAdviseSinkEx.\n") );
 		 return( &m_xAdviseSinkEx );
 	  }
    }
@@ -158,7 +158,7 @@ BOOL CTestContainer98Item::CreateOrLoad( REFCLSID clsid, LPCTSTR pszName,
 	  if( SUCCEEDED( hResult ) )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"Could not aggregate on the control, so it won't support extended properties.\n" );
+			_T("Could not aggregate on the control, so it won't support extended properties.\n") );
 	  }
    }
    if( SUCCEEDED( hResult ) )
@@ -207,7 +207,7 @@ BOOL CTestContainer98Item::CreateOrLoad( REFCLSID clsid, LPCTSTR pszName,
 			if( FAILED( hResult ) )
 			{
 			   TCControlTrace( TRACELEVEL_NORMAL, this,
-				  "SetClientSite failed.\n" );
+				  _T("SetClientSite failed.\n") );
 			}
 		 }
 	  }
@@ -296,7 +296,7 @@ BOOL CTestContainer98Item::CreateOrLoad( REFCLSID clsid, LPCTSTR pszName,
 			if( FAILED( hResult ) )
 			{
 			   TCControlTrace( TRACELEVEL_NORMAL, this,
-				  "SetClientSite failed.\n" );
+				  _T("SetClientSite failed.\n") );
 			}
 		 }
 	  }
@@ -515,7 +515,7 @@ BOOL CTestContainer98Item::QuickActivate()
    m_dwEventCookie = qaControl.dwEventCookie;
    m_dwPropertyCookie = qaControl.dwPropNotifyCookie;
 
-   TCControlTrace( TRACELEVEL_NORMAL, this, "Quick activation successful.\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, this, _T("Quick activation successful.\n") );
 
    return( TRUE );
 }
@@ -538,7 +538,7 @@ BOOL CTestContainer98Item::FinishCreate( HRESULT hr )
    {
 	  // That's OK, it might not be a control
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Could not get object's IOleControl interface\n" );
+		 _T("Could not get object's IOleControl interface\n") );
    }
 
    hResult = m_lpObject->QueryInterface( IID_IConnectionPointContainer,
@@ -570,7 +570,7 @@ BOOL CTestContainer98Item::FinishCreate( HRESULT hr )
    m_lpObject->GetMiscStatus( DVASPECT_CONTENT, &m_dwMiscStatus );
    if( m_dwMiscStatus&OLEMISC_INSIDEOUT )
    {
-	  TCControlTrace( TRACELEVEL_VERBOSE, this, "Control is inside-out\n" );
+	  TCControlTrace( TRACELEVEL_VERBOSE, this, _T("Control is inside-out\n") );
 	  m_tInsideOut = TRUE;
    }
 
@@ -579,7 +579,7 @@ BOOL CTestContainer98Item::FinishCreate( HRESULT hr )
    if( SUCCEEDED( hResult ) )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Control supports IPointerInactive.\n" );
+		 _T("Control supports IPointerInactive.\n") );
    }
 
    hResult = m_lpObject->QueryInterface( IID_IViewObjectEx,
@@ -587,7 +587,7 @@ BOOL CTestContainer98Item::FinishCreate( HRESULT hr )
    if( SUCCEEDED( hResult ) )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Control supports IViewObjectEx.\n" );
+		 _T("Control supports IViewObjectEx.\n") );
 	  m_pViewObjectEx->GetViewStatus( &m_dwViewStatus );
    }
    else
@@ -643,7 +643,7 @@ HRESULT CTestContainer98Item::GetControlInfo()
 	  if( hResult == E_NOTIMPL )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"IOleControl::GetControlInfo() not implemented\n" );
+			_T("IOleControl::GetControlInfo() not implemented\n") );
 	  }
 	  else
 	  {
@@ -753,7 +753,7 @@ BOOL CTestContainer98Item::GetPropertyPageCLSIDs( CArray< CLSID,
 	  if( FAILED( hResult ) )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"ISpecifyPropertyPages::GetPages() failed\n" );
+			_T("ISpecifyPropertyPages::GetPages() failed\n") );
 		 return( FALSE );
 	  }
 
@@ -792,7 +792,7 @@ HRESULT CTestContainer98Item::InitControlInfo()
    if( FAILED( hResult ) )
    {
 	 TCControlTrace( TRACELEVEL_NORMAL, this,
-		"Control doesn't support IProvideClassInfo" );
+		_T("Control doesn't support IProvideClassInfo") );
 	  return( S_OK );
    }
 
@@ -868,12 +868,12 @@ HRESULT CTestContainer98Item::InitControlInfo()
    if( !tFoundDefaultSource )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Could not find control's default source\n" );
+		 _T("Could not find control's default source\n") );
    }
    if( !tFoundDefaultInterface )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Could not find control's default interface\n" );
+		 _T("Could not find control's default interface\n") );
 	  return( E_FAIL );
    }
 
@@ -1129,7 +1129,7 @@ void CTestContainer98Item::OnGetItemPosition( CRect& rectPosition )
 
 void CTestContainer98Item::OnActivate()
 {
-   TCControlTrace( TRACELEVEL_NORMAL, this, "Activating control\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, this, _T("Activating control\n") );
 
    COleClientItem::OnActivate();
 
@@ -1142,7 +1142,7 @@ void CTestContainer98Item::OnActivateUI()
    CTestContainer98Doc* pDoc;
    POSITION posItem;
 
-   TCControlTrace( TRACELEVEL_NORMAL, this, "UIActivating control\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, this, _T("UIActivating control\n") );
 
    // Allow only one UIActive item per frame.
    pDoc = GetDocument();
@@ -1168,7 +1168,7 @@ void CTestContainer98Item::OnDeactivateUI( BOOL bUndoable )
 {
    COleClientItem::OnDeactivateUI( bUndoable );
 
-   TCControlTrace( TRACELEVEL_NORMAL, this, "UIDeactivating control\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, this, _T("UIDeactivating control\n") );
 
    // Also InPlaceDeactivate the object if it doesn't have the
    // ACTIVATEWHENVISIBLE flag set.
@@ -1269,7 +1269,7 @@ void CTestContainer98Item::Release( OLECLOSE dwCloseOption )
 		 if( FAILED( hResult ) )
 		 {
 			TCControlTrace( TRACELEVEL_NORMAL, this,
-			   "QuickActivated control connected to event sink, but doesn't support that connection point.\n" );
+			   _T("QuickActivated control connected to event sink, but doesn't support that connection point.\n") );
 		 }
 	  }
 	  if( m_pEventCP != NULL )
@@ -1290,7 +1290,7 @@ void CTestContainer98Item::Release( OLECLOSE dwCloseOption )
 		 if( FAILED( hResult ) )
 		 {
 			TCControlTrace( TRACELEVEL_NORMAL, this,
-			   "QuickActivated control connected to property notify sink, but doesn't support that connection point.\n" );
+			   _T("QuickActivated control connected to property notify sink, but doesn't support that connection point.\n") );
 		 }
 	  }
 	  if( m_pPropertyCP != NULL )
@@ -1526,7 +1526,7 @@ void CTestContainer98Item::ReadItem( CArchive& ar )
 	  if( SUCCEEDED( hResult ) )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, this,
-			"Could not aggregate on the control, so it won't support extended properties.\n" );
+			_T("Could not aggregate on the control, so it won't support extended properties.\n") );
 	  }
    }
    if( SUCCEEDED( hResult ) )
@@ -1564,7 +1564,7 @@ void CTestContainer98Item::ReadItem( CArchive& ar )
 			if( FAILED( hResult ) )
 			{
 			   TCControlTrace( TRACELEVEL_NORMAL, this,
-				  "SetClientSite failed.\n" );
+				  _T("SetClientSite failed.\n") );
 			}
 		 }
 	  }
@@ -1608,7 +1608,7 @@ void CTestContainer98Item::ReadItem( CArchive& ar )
 			if( FAILED( hResult ) )
 			{
 			   TCControlTrace( TRACELEVEL_NORMAL, this,
-				  "SetClientSite failed.\n" );
+				  _T("SetClientSite failed.\n") );
 			}
 		 }
 	  }
@@ -1885,7 +1885,7 @@ void CTestContainer98Item::InvokeMethods()
    if( FAILED( hResult ) )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Failed to get object's primary IDispatch interface.\n" );
+		 _T("Failed to get object's primary IDispatch interface.\n") );
 	  return;
    }
 
@@ -1898,11 +1898,11 @@ void CTestContainer98Item::OnFocus( BOOL tGotFocus )
 {
    if( tGotFocus )
    {
-	  TCControlTrace( TRACELEVEL_NORMAL, this, "Control got focus\n" );
+	  TCControlTrace( TRACELEVEL_NORMAL, this, _T("Control got focus\n") );
    }
    else
    {
-	  TCControlTrace( TRACELEVEL_NORMAL, this, "Control lost focus\n" );
+	  TCControlTrace( TRACELEVEL_NORMAL, this, _T("Control lost focus\n") );
    }
 
    GetActiveView()->OnFocus( this, tGotFocus );
@@ -1930,7 +1930,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XOleControlSite::AddRef()
 {
    METHOD_PROLOGUE( CTestContainer98Item, OleControlSite )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XOleControlSite::AddRef().\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XOleControlSite::AddRef().\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -1939,7 +1939,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XOleControlSite::Release()
 {
    METHOD_PROLOGUE( CTestContainer98Item, OleControlSite )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XOleControlSite::Release().\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XOleControlSite::Release().\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -2098,7 +2098,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XServiceProvider::AddRef()
 {
    METHOD_PROLOGUE( CTestContainer98Item, ServiceProvider )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XServiceProvider::AddRef()\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XServiceProvider::AddRef()\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -2107,7 +2107,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XServiceProvider::Release()
 {
    METHOD_PROLOGUE( CTestContainer98Item, ServiceProvider )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XServiceProvider::Release()\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XServiceProvider::Release()\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -2136,7 +2136,7 @@ STDMETHODIMP CTestContainer98Item::XServiceProvider::QueryService(
    if( IsEqualGUID( guidService, SID_SBindHost ) )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "QueryService for SID_SBindHost\n" );
+		 _T("QueryService for SID_SBindHost\n") );
 	  if( !pThis->GetDocument()->SupportsService( guidService ) )
 	  {
 		 return( E_NOINTERFACE );
@@ -2154,7 +2154,7 @@ STDMETHODIMP CTestContainer98Item::XServiceProvider::QueryService(
    else
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "QueryService for unknown service\n" );
+		 _T("QueryService for unknown service\n") );
 	  return( E_NOINTERFACE );
    }
 }
@@ -2167,7 +2167,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XEventHandler::AddRef()
 {
    METHOD_PROLOGUE( CTestContainer98Item, EventHandler )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XEventHandler::AddRef()\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XEventHandler::AddRef()\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -2176,7 +2176,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XEventHandler::Release()
 {
    METHOD_PROLOGUE( CTestContainer98Item, EventHandler )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XEventHandler::Release()\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XEventHandler::Release()\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -2194,8 +2194,8 @@ STDMETHODIMP CTestContainer98Item::XEventHandler::QueryInterface( REFIID iid,
 	  // point is exposed not as IID_IDispatch, but rather as the IID of the
 	  // control's event dispinterface,
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "Warning: QI for IID_IDispatch on event handler interface.\n"
-		 "\tDid you really mean to QI for your specific event interface?\n" );
+		 _T("Warning: QI for IID_IDispatch on event handler interface.\n")
+		 _T("\tDid you really mean to QI for your specific event interface?\n") );
    }
 
    return( pThis->ExternalQueryInterface( &iid, ppvObj ) );
@@ -2270,7 +2270,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XAmbientProperties::AddRef()
    METHOD_PROLOGUE( CTestContainer98Item, AmbientProperties )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XAmbientProperties::AddRef().\n" );
+	  _T("XAmbientProperties::AddRef().\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -2280,7 +2280,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XAmbientProperties::Release()
    METHOD_PROLOGUE( CTestContainer98Item, AmbientProperties )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XAmbientProperties::Release().\n" );
+	  _T("XAmbientProperties::Release().\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -2412,7 +2412,7 @@ STDMETHODIMP CTestContainer98Item::XAmbientProperties::Invoke(
    if( pProp == NULL )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "Control asked for unknown ambient property.  DISPID=%d\n",
+		 _T("Control asked for unknown ambient property.  DISPID=%d\n"),
 		 dispidMember );
 	  return( DISP_E_MEMBERNOTFOUND );
    }
@@ -2420,13 +2420,13 @@ STDMETHODIMP CTestContainer98Item::XAmbientProperties::Invoke(
    if( !pProp->IsEnabled() )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "Control asked for ambient property %s, but the property was disabled.\n",
+		 _T("Control asked for ambient property %s, but the property was disabled.\n"),
 		 LPCTSTR( pProp->GetName() ) );
 	  return( DISP_E_MEMBERNOTFOUND );
    }
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "Control got ambient property %s.\n", LPCTSTR( pProp->GetName() ) );
+	  _T("Control got ambient property %s.\n"), LPCTSTR( pProp->GetName() ) );
 
    varValue = pProp->GetValue();
    hResult = VariantCopy( pvarResult, &varValue );
@@ -2448,7 +2448,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XPropertyNotifySink::AddRef()
    METHOD_PROLOGUE( CTestContainer98Item, PropertyNotifySink )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XPropertyNotifySink::AddRef().\n" );
+	  _T("XPropertyNotifySink::AddRef().\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -2458,7 +2458,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XPropertyNotifySink::Release()
    METHOD_PROLOGUE( CTestContainer98Item, PropertyNotifySink )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XPropertyNotifySink::Release().\n" );
+	  _T("XPropertyNotifySink::Release().\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -2814,7 +2814,7 @@ HRESULT CTestContainer98Item::SaveToPropertyBag( IPropertyBag* pPropertyBag )
    if( FAILED( hResult ) )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Control does not support IPersistPropertyBag.\n" );
+		 _T("Control does not support IPersistPropertyBag.\n") );
 	  return( hResult );
    }
 
@@ -2879,7 +2879,7 @@ HRESULT CTestContainer98Item::SaveToStream( IStream* pStream )
 	  // them know the error of their ways, and just go for IPersistStorage to
 	  // get the IPersist interface.
 	  TCControlTrace( TRACELEVEL_NORMAL, this,
-		 "Object doesn't support IPersist.\n" );
+		 _T("Object doesn't support IPersist.\n") );
 	  hResult = m_lpObject->QueryInterface( IID_IPersistStorage,
 		 (void**)&pPersist );
 	  if( FAILED( hResult ) )
@@ -3150,7 +3150,7 @@ BOOL CTestContainer98Item::Draw( CDC* pDC, LPCRECT prectBounds,
 
 void CTestContainer98Item::OnDeactivate( BOOL tNoRedraw )
 {
-   TCControlTrace( TRACELEVEL_NORMAL, this, "Deactivating control\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, this, _T("Deactivating control\n") );
 
    if( m_tWindowless )
    {
@@ -3183,7 +3183,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XOleInPlaceSiteWindowless::
    METHOD_PROLOGUE( CTestContainer98Item, OleInPlaceSiteWindowless )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XOleInPlaceSiteWindowless::AddRef().\n" );
+	  _T("XOleInPlaceSiteWindowless::AddRef().\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -3194,7 +3194,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XOleInPlaceSiteWindowless::
    METHOD_PROLOGUE( CTestContainer98Item, OleInPlaceSiteWindowless )
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "XOleInPlaceSiteWindowless::Release().\n" );
+	  _T("XOleInPlaceSiteWindowless::Release().\n") );
 
    return( pThis->ExternalRelease() );
 }
@@ -3381,17 +3381,17 @@ STDMETHODIMP CTestContainer98Item::XOleInPlaceSiteWindowless::
    METHOD_PROLOGUE( CTestContainer98Item, OleInPlaceSiteWindowless );
 
    TCControlTrace( TRACELEVEL_NORMAL, pThis,
-	  "Control wants to be windowless.\n" );
+	  _T("Control wants to be windowless.\n") );
    if( pThis->GetDocument()->CanWindowlessActivate() )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "Windowless activation is allowed.\n" );
+		 _T("Windowless activation is allowed.\n") );
 	  return( S_OK );
    }
    else
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "You'll create a window and like it.\n" );
+		 _T("You'll create a window and like it.\n") );
 	  return( S_FALSE );
    }
 }
@@ -3491,7 +3491,7 @@ STDMETHODIMP CTestContainer98Item::XOleInPlaceSiteWindowless::InvalidateRect(
 	  if( rect != *prect )
 	  {
 		 TCControlTrace( TRACELEVEL_NORMAL, pThis,
-			"Object tried to invalidate pixels outside its bounds.\n" );
+			_T("Object tried to invalidate pixels outside its bounds.\n") );
 	  }
    }
 
@@ -3527,7 +3527,7 @@ STDMETHODIMP CTestContainer98Item::XOleInPlaceSiteWindowless::InvalidateRgn(
    if( rect != rectRgn )
    {
 	  TCControlTrace( TRACELEVEL_NORMAL, pThis,
-		 "Object tried to invalidate pixels outside its bounds.\n" );
+		 _T("Object tried to invalidate pixels outside its bounds.\n") );
 	  return( InvalidateRect( NULL, tErase ) );
    }
 
@@ -3638,7 +3638,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XAdviseSinkEx::AddRef()
 {
    METHOD_PROLOGUE( CTestContainer98Item, AdviseSinkEx )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XAdviseSinkEx::AddRef().\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XAdviseSinkEx::AddRef().\n") );
 
    return( pThis->ExternalAddRef() );
 }
@@ -3647,7 +3647,7 @@ STDMETHODIMP_( ULONG ) CTestContainer98Item::XAdviseSinkEx::Release()
 {
    METHOD_PROLOGUE( CTestContainer98Item, AdviseSinkEx )
 
-   TCControlTrace( TRACELEVEL_NORMAL, pThis, "XAdviseSinkEx::Release().\n" );
+   TCControlTrace( TRACELEVEL_NORMAL, pThis, _T("XAdviseSinkEx::Release().\n") );
 
    return( pThis->ExternalRelease() );
 }

@@ -228,25 +228,25 @@ void CRegisterControlsDlg::OnUnregister()
 	  ASSERT( iItem != -1 );
 
 	  strPath = m_lvRegisteredControls.GetItemText( iItem, 1 );
-	  TCTrace( TRACELEVEL_NORMAL, "Unregistering %s\n", LPCTSTR( strPath ) );
+	  TCTrace( TRACELEVEL_NORMAL, _T("Unregistering %s\n"), LPCTSTR( strPath ) );
 
 	  hResult = S_OK;
 
 	  hLibrary = LoadLibrary( strPath );
 	  if( hLibrary == NULL )
 	  {
-		 TCTrace( TRACELEVEL_NORMAL, "Failed to load library %s.\n", LPCTSTR(
+		 TCTrace( TRACELEVEL_NORMAL, _T("Failed to load library %s.\n"), LPCTSTR(
 			strPath ) );
 		 hResult = E_FAIL;
 	  }
 	  else
 	  {
 		 pDllUnregisterServer = PDLLUNREGISTERSERVER( GetProcAddress( hLibrary,
-			_T( "DllUnregisterServer" ) ) );
+			"DllUnregisterServer" ) );
 		 if( pDllUnregisterServer == NULL )
 		 {
 			TCTrace( TRACELEVEL_NORMAL,
-			   "Failed to get address of DllUnregisterServer.\n" );
+			   _T("Failed to get address of DllUnregisterServer.\n") );
 			hResult = E_FAIL;
 		 }
 		 else
@@ -255,7 +255,7 @@ void CRegisterControlsDlg::OnUnregister()
 			if( FAILED( hResult ) )
 			{
 			   TCTrace( TRACELEVEL_NORMAL,
-				  "DllUnregisterServer failed hResult = 0x%x.\n", hResult );
+				  _T("DllUnregisterServer failed hResult = 0x%x.\n"), hResult );
 			}
 		 }
 		 FreeLibrary( hLibrary );
@@ -305,21 +305,21 @@ static void RegisterServer( LPCTSTR pszPathName )
    PDLLREGISTERSERVER pDllRegisterServer;
    HRESULT hResult;
 
-   TCTrace( TRACELEVEL_NORMAL, "Registering %s\n", pszPathName );
+   TCTrace( TRACELEVEL_NORMAL, _T("Registering %s\n"), pszPathName );
    hLibrary = LoadLibrary( pszPathName );
    if( hLibrary == NULL )
    {
-	  TCTrace( TRACELEVEL_NORMAL, "Failed to load library %s.\n",
+	  TCTrace( TRACELEVEL_NORMAL, _T("Failed to load library %s.\n"),
 		 pszPathName );
    }
    else
    {
-	  pDllRegisterServer = PDLLREGISTERSERVER( GetProcAddress( hLibrary, _T(
-		 "DllRegisterServer" ) ) );
+	  pDllRegisterServer = PDLLREGISTERSERVER( GetProcAddress( hLibrary, 
+		 "DllRegisterServer" ) );
 	  if( pDllRegisterServer == NULL )
 	  {
 		 TCTrace( TRACELEVEL_NORMAL,
-			"Failed to get address of DllRegisterServer.\n" );
+			_T("Failed to get address of DllRegisterServer.\n") );
 	  }
 	  else
 	  {
@@ -327,7 +327,7 @@ static void RegisterServer( LPCTSTR pszPathName )
 		 if( FAILED( hResult ) )
 		 {
 			TCTrace( TRACELEVEL_NORMAL,
-			   "DllRegisterServer failed hResult = 0x%x.\n", hResult );
+			   _T("DllRegisterServer failed hResult = 0x%x.\n"), hResult );
 		 }
 	  }
 	  FreeLibrary( hLibrary );

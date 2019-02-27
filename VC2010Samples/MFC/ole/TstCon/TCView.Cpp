@@ -155,7 +155,7 @@ void CTestContainer98View::OnDraw( CDC* pDC )
    if( pDoc->UseTwoPassDrawing() )
    {
 	  // Draw the opaque parts of the controls from front to back.
-	  TCTrace( TRACELEVEL_VERBOSE, "Starting drawing pass 1.\n" );
+	  TCTrace( TRACELEVEL_VERBOSE, _T("Starting drawing pass 1.\n") );
 	  posItem = pDoc->GetStartPosition();
 	  while( posItem != NULL )
 	  {
@@ -177,7 +177,7 @@ void CTestContainer98View::OnDraw( CDC* pDC )
 
 	  // Draw the rest of each control from back to front, clipping out opaque
 	  // regions of any controls in front.
-	  TCTrace( TRACELEVEL_VERBOSE, "Starting drawing pass 2.\n" );
+	  TCTrace( TRACELEVEL_VERBOSE, _T("Starting drawing pass 2.\n") );
 	  posItem = pDoc->GetTailPosition();
 	  while( posItem != NULL )
 	  {
@@ -656,7 +656,7 @@ BOOL CTestContainer98View::HandlePointerInactiveMove( CPoint point,
 	  if( m_pItemToDeactivateOnLeave != pItemHit )
 	  {
 		 TCTrace( TRACELEVEL_NORMAL,
-			"Deactivating item because of POINTERINACTIVE_DEACTIVATEONLEAVE.\n" );
+			_T("Deactivating item because of POINTERINACTIVE_DEACTIVATEONLEAVE.\n") );
 		 m_pItemToDeactivateOnLeave->Deactivate();
 		 m_pItemToDeactivateOnLeave = NULL;
 	  }
@@ -673,7 +673,7 @@ BOOL CTestContainer98View::HandlePointerInactiveMove( CPoint point,
 		 {
 			msg = *GetCurrentMessage();
 			TCTrace( TRACELEVEL_NORMAL,
-			   "Activating item because of POINTERINACTIVE_ACTIVATEONENTRY.\n" );
+			   _T("Activating item because of POINTERINACTIVE_ACTIVATEONENTRY.\n") );
 			pItemHit->Activate( OLEIVERB_SHOW, this, &msg );
 			if( dwPolicy&POINTERINACTIVE_DEACTIVATEONLEAVE )
 			{
@@ -723,7 +723,7 @@ BOOL CTestContainer98View::HandlePointerInactiveSetCursor(
 	  if( m_pItemToDeactivateOnLeave != pItemHit )
 	  {
 		 TCTrace( TRACELEVEL_NORMAL,
-			"Deactivating item because of POINTERINACTIVE_DEACTIVATEONLEAVE.\n" );
+			_T("Deactivating item because of POINTERINACTIVE_DEACTIVATEONLEAVE.\n") );
 		 m_pItemToDeactivateOnLeave->Deactivate();
 		 m_pItemToDeactivateOnLeave = NULL;
 	  }
@@ -742,7 +742,7 @@ BOOL CTestContainer98View::HandlePointerInactiveSetCursor(
 		 {
 			msg = *GetCurrentMessage();
 			TCTrace( TRACELEVEL_NORMAL,
-			   "Activating item because of POINTERINACTIVE_ACTIVATEONENTRY.\n" );
+			   _T("Activating item because of POINTERINACTIVE_ACTIVATEONENTRY.\n") );
 			pItemHit->Activate( OLEIVERB_SHOW, this, &msg );
 			if( dwPolicy&POINTERINACTIVE_DEACTIVATEONLEAVE )
 			{
@@ -783,7 +783,7 @@ BOOL CTestContainer98View::HandlePointerInactiveDragOver( CPoint point )
 		 if( dwPolicy&POINTERINACTIVE_ACTIVATEONDRAG )
 		 {
 			TCTrace( TRACELEVEL_NORMAL,
-			   "Activating item because of POINTERINACTIVE_ACTIVATEONDRAG.\n" );
+			   _T("Activating item because of POINTERINACTIVE_ACTIVATEONDRAG.\n") );
 			pItemHit->Activate( OLEIVERB_SHOW, this );
 		 }
 	  }
@@ -1481,7 +1481,7 @@ HRESULT CTestContainer98View::OnWindowlessSetFocus(
 {
    ASSERT( pItem != NULL );
 
-   TCTrace( TRACELEVEL_NORMAL, "Setting focus to windowless control.\n" );
+   TCTrace( TRACELEVEL_NORMAL, _T("Setting focus to windowless control.\n") );
 
    SetFocus();
    m_pItemWithFocus = pItem;
@@ -2259,7 +2259,7 @@ void CTestContainer98View::OnEditCopy()
 	  while( posItem != NULL )
 	  {
 		 pItem = m_lpSelectedItems.GetNext( posItem );
-		 strStorageName.Format( "Control%d", iItem );
+		 strStorageName.Format( _T("Control%d"), iItem );
 		 bstrStorageName = strStorageName.AllocSysString();
 
 		 hResult = pStorage->CreateStorage( bstrStorageName, STGM_READWRITE|
@@ -2356,7 +2356,7 @@ void CTestContainer98View::OnEditPaste()
 	  pItem = NULL;
 	  try
 	  {
-		 strItemName.Format( "Control%d", iItem );
+		 strItemName.Format( _T("Control%d"), iItem );
 		 bstrItemName = strItemName.AllocSysString();
 		 hResult = pStorage->OpenStorage( bstrItemName, NULL, STGM_READWRITE|
 			STGM_SHARE_EXCLUSIVE, NULL, 0, &pSubStorage );

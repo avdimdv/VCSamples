@@ -382,7 +382,7 @@ void CMethodDlg::DisplayParamValueInList( int iParam )
    if( m_piParamTypes[iParam] == VTI_COLOR )
    {
 	  ASSERT( pvarParam->vt == VT_I4 );
-	  strValue.Format( "%#8.8x", pvarParam->lVal );
+	  strValue.Format( _T("%#8.8x"), pvarParam->lVal );
 	  m_listParams.SetItemText( iParam, 1, strValue );
    }
    else if( m_piParamTypes[iParam] == VTI_DATE )

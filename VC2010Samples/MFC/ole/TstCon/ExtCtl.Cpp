@@ -77,7 +77,7 @@ HRESULT CExtendedControl::Init( REFCLSID clsidControl,
    if( FAILED( hResult ) )
    {
 	  TCTrace( TRACELEVEL_NORMAL,
-		 "Failed to load typelib for extended control\n" );
+		 _T("Failed to load typelib for extended control\n") );
 	  return( hResult );
    }
 

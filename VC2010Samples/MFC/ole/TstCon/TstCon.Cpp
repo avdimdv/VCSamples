@@ -95,16 +95,16 @@ void CTCCommandLineInfo::ParseServiceFlag( LPCTSTR pszParam )
 
    ptService = NULL;
    pcFlag = NULL;
-   if( strncmp( pszParam, _T( "SBindHost" ), strlen( _T( "SBindHost" ) ) ) ==
+   if(_tcsncmp( pszParam, _T( "SBindHost" ), _tcslen( _T( "SBindHost" ) ) ) ==
 	  0 )
    {
 	  ptService = &m_pOptions->m_tSBindHost;
-	  pcFlag = &pszParam[strlen( _T( "SBindHost" ) )];
+	  pcFlag = &pszParam[_tcslen( _T( "SBindHost" ) )];
    }
 
    if( ptService == NULL )
    {
-	  TCTrace( TRACELEVEL_NORMAL, "Unrecognized command line parameter %s\n",
+	  TCTrace( TRACELEVEL_NORMAL, _T("Unrecognized command line parameter %s\n"),
 		 pszParam );
    }
    else
@@ -120,7 +120,7 @@ void CTCCommandLineInfo::ParseServiceFlag( LPCTSTR pszParam )
 	  else
 	  {
 		 TCTrace( TRACELEVEL_NORMAL,
-			"Command line option %s: Expected + or -\n", pszParam );
+			_T("Command line option %s: Expected + or -\n"), pszParam );
 	  }
    }
 }
@@ -130,10 +130,10 @@ void CTCCommandLineInfo::ParseInterfaceFlag( LPCTSTR pszParam )
    ENSURE( pszParam != NULL );
    ASSERT( pszParam[0] == 'I' );
 
-   if( strncmp( pszParam, _T( "IOleInPlaceSiteEx" ), strlen( _T(
+   if(_tcsncmp( pszParam, _T( "IOleInPlaceSiteEx" ), _tcslen( _T(
 	  "IOleInPlaceSiteEx" ) ) ) == 0 )
    {
-	  switch( pszParam[strlen( _T( "IOleInPlaceSiteEx" ) )] )
+	  switch( pszParam[_tcslen( _T( "IOleInPlaceSiteEx" ) )] )
 	  {
 	  case _T( '+' ):
 		 m_pOptions->m_tIOleInPlaceSiteEx = TRUE;
@@ -144,14 +144,14 @@ void CTCCommandLineInfo::ParseInterfaceFlag( LPCTSTR pszParam )
 		 break;
 
 	  default:
-		 TCTrace( 1, "Unrecognized command line parameter %s\n", pszParam );
+		 TCTrace( 1, _T("Unrecognized command line parameter %s\n"), pszParam );
 		 break;
 	  }
    }
-   else if( strncmp( pszParam, _T( "IOleInPlaceSiteWindowless" ), strlen( _T(
+   else if(_tcsncmp( pszParam, _T( "IOleInPlaceSiteWindowless" ), _tcslen( _T(
 	  "IOleInPlaceSiteWindowless" ) ) ) == 0 )
    {
-	  switch( pszParam[strlen( _T( "IOleInPlaceSiteWindowless" ) )] )
+	  switch( pszParam[_tcslen( _T( "IOleInPlaceSiteWindowless" ) )] )
 	  {
 	  case _T( '+' ):
 		 m_pOptions->m_tIOleInPlaceSiteWindowless = TRUE;
@@ -162,14 +162,14 @@ void CTCCommandLineInfo::ParseInterfaceFlag( LPCTSTR pszParam )
 		 break;
 
 	  default:
-		 TCTrace( 1, "Unrecognized command line parameter %s\n", pszParam );
+		 TCTrace( 1, _T("Unrecognized command line parameter %s\n"), pszParam );
 		 break;
 	  }
    }
-   else if( strncmp( pszParam, _T( "IAdviseSinkEx" ), strlen( _T(
+   else if(_tcsncmp( pszParam, _T( "IAdviseSinkEx" ), _tcslen( _T(
 	  "IAdviseSinkEx" ) ) ) == 0 )
    {
-	  switch( pszParam[strlen( _T( "IAdviseSinkEx" ) )] )
+	  switch( pszParam[_tcslen( _T( "IAdviseSinkEx" ) )] )
 	  {
 	  case _T( '+' ):
 		 m_pOptions->m_tIAdviseSinkEx = TRUE;
@@ -180,13 +180,13 @@ void CTCCommandLineInfo::ParseInterfaceFlag( LPCTSTR pszParam )
 		 break;
 
 	  default:
-		 TCTrace( 1, "Unrecognized command line parameter %s\n", pszParam );
+		 TCTrace( 1, _T("Unrecognized command line parameter %s\n"), pszParam );
 		 break;
 	  }
    }
    else
    {
-	  TCTrace( 1, "Unrecognized command line parameter %s\n", pszParam );
+	  TCTrace( 1, _T("Unrecognized command line parameter %s\n"), pszParam );
    }
 }
 
@@ -221,7 +221,7 @@ void CTCCommandLineInfo::ParseOptionFlag( LPCTSTR pszParam )
 	  break;
 
    default:
-	  TCTrace( 1, "Unrecognized command line parameter %s\n", pszParam );
+	  TCTrace( 1, _T("Unrecognized command line parameter %s\n"), pszParam );
 	  break;
    }
 
@@ -238,7 +238,7 @@ void CTCCommandLineInfo::ParseOptionFlag( LPCTSTR pszParam )
 	  else
 	  {
 		 TCTrace( TRACELEVEL_NORMAL,
-			"Command line option %s: expected + or -\n", pszParam );
+			_T("Command line option %s: expected + or -\n"), pszParam );
 	  }
    }
 }
@@ -257,7 +257,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 	  m_tExpectingLogFileName = FALSE;
 	  if( tFlag )
 	  {
-		 TCTrace( TRACELEVEL_NORMAL, "Bogus log filename\n" );
+		 TCTrace( TRACELEVEL_NORMAL, _T("Bogus log filename\n") );
 	  }
 	  else
 	  {
@@ -270,7 +270,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 	  m_tExpectingDSMFile = FALSE;
 	  if( tFlag )
 	  {
-		 TCTrace( TRACELEVEL_NORMAL, "Bogus dsm filename\n" );
+		 TCTrace( TRACELEVEL_NORMAL, _T("Bogus dsm filename\n") );
 	  }
 	  else
 	  {
@@ -284,7 +284,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 	  m_tExpectingProgID = FALSE;
 	  if( tFlag )
 	  {
-		 TCTrace( TRACELEVEL_NORMAL, "Bogus ProgID\n" );
+		 TCTrace( TRACELEVEL_NORMAL, _T("Bogus ProgID\n") );
 	  }
 	  else
 	  {
@@ -302,7 +302,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 			if( tLast )
 			{
 			   TCTrace( TRACELEVEL_NORMAL,
-				  "No ProgID given for /C parameter\n" );
+				  _T("No ProgID given for /C parameter\n") );
 			}
 			else
 			{
@@ -313,7 +313,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 			if( tLast )
 			{
 			   TCTrace( TRACELEVEL_NORMAL,
-				  "No filename given for /C parameter\n" );
+				  _T("No filename given for /C parameter\n") );
 			}
 			else
 			{
@@ -346,7 +346,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 			case _T( 'f' ):
 			   if( tLast )
 			   {
-				  TCTrace( 1, "No filename given for /Lf parameter\n" );
+				  TCTrace( 1, _T("No filename given for /Lf parameter\n") );
 			   }
 			   else
 			   {
@@ -355,7 +355,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 			   break;
 
 			default:
-			   TCTrace( 1, "Unrecognized command line parameter %s\n",
+			   TCTrace( 1, _T("Unrecognized command line parameter %s\n"),
 				  pszParam );
 			   break;
 			}
@@ -377,7 +377,7 @@ void CTCCommandLineInfo::ParseParam( LPCTSTR pszParam, BOOL tFlag, BOOL tLast )
 			   break;
 
 			default:
-			   TCTrace( 1, "Unrecognized command line parameter %s\n",
+			   TCTrace( 1, _T("Unrecognized command line parameter %s\n"),
 				  pszParam );
 			   break;
 			}

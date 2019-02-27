@@ -163,7 +163,7 @@ void CTestContainer98Doc::CreateUniqueItemName( CTestContainer98Item* pItem,
 			{
 			   // This name is already in use.
 			   tCollisionFound = TRUE;
-			   strUniqueName.Format( "%s%u", pszBaseName, nTag );
+			   strUniqueName.Format( _T("%s%u"), pszBaseName, nTag );
 			   nTag++;
 			}
 		 }
@@ -253,7 +253,7 @@ BOOL CTestContainer98Doc::Initialize()
 	  catch( CException* pException )
 	  {
 		 pException->Delete();
-		 TCTrace( TRACELEVEL_NORMAL, "Failed to load control.\n" );
+		 TCTrace( TRACELEVEL_NORMAL, _T("Failed to load control.\n") );
 	  }
 	  pApp->m_options.m_strProgID.Empty();
    }
@@ -724,7 +724,7 @@ void CTestContainer98Doc::BroadcastAmbientPropertyChange( DISPID dispid )
    CTestContainer98Item* pItem;
 
    TCTrace( TRACELEVEL_NORMAL,
-	  "Broadcasting ambient property change.  DISPID=%d\n", dispid );
+	  _T("Broadcasting ambient property change.  DISPID=%d\n"), dispid );
 
    posItem = GetStartPosition();
    while( posItem != NULL )
@@ -1521,16 +1521,16 @@ void CTestContainer98Doc::RunAutomationScript(LPCTSTR szScriptFile)
 		if(NULL == m_pScriptManager)
 			InitScriptManager();
 
-		hr = m_pScriptManager->LoadScript(szScriptFile, "RunTest");
+		hr = m_pScriptManager->LoadScript(szScriptFile, _T("RunTest"));
 		ASSERT(SUCCEEDED(hr));
-		pScript = m_pScriptManager->FindMacro("RunTest");
+		pScript = m_pScriptManager->FindMacro(_T("RunTest"));
 		ENSURE(pScript);
-		hr = pScript->RunMacro("RunTest");
+		hr = pScript->RunMacro(_T("RunTest"));
 		ASSERT(SUCCEEDED(hr));
 	}
 	CATCH(COleException, e)
 	{
-		char szErr[MAX_PATH];
+		TCHAR szErr[MAX_PATH];
 		e->GetErrorMessage(szErr, MAX_PATH);
 		AfxMessageBox(szErr);
 	}
