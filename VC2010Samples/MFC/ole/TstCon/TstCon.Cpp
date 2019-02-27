@@ -499,6 +499,8 @@ BOOL CTestContainer98App::InitInstance()
 
 	AfxEnableControlContainer();
 
+	C_AutoGdiplusStartup autoGdiplusStartup;
+
 	// Change the registry key under which our settings are stored.
 	// You should modify this string to be something appropriate
 	// such as the name of your company or organization.

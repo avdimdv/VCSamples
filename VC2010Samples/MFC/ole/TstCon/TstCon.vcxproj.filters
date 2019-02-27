@@ -151,6 +151,9 @@
     <ClInclude Include="hlp\popups.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DPIHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="hlp\automation.htm">
@@ -376,5 +379,10 @@
     <CustomBuild Include="VarUtils.H">
       <Filter>Header Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="dpiaware.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
   </ItemGroup>
 </Project>

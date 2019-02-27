@@ -232,6 +232,9 @@ void CTestContainer98View::OnInitialUpdate()
    m_pSelection = NULL;
    m_lpSelectedItems.RemoveAll();
 
+   m_pItemWithFocus = NULL;
+   m_pItemWithCapture = NULL;
+
    CTestContainer98App * pApp = (CTestContainer98App * )AfxGetApp();
    ENSURE(pApp);
    

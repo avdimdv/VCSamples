@@ -107,6 +107,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -124,10 +125,10 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>
-      </AdditionalManifestFiles>
+      <AdditionalManifestFiles>dpiaware.manifest</AdditionalManifestFiles>
       <AssemblyIdentity>
       </AssemblyIdentity>
+      <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
     <PostBuildEvent>
       <Message>Building help file...</Message>
@@ -158,6 +159,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -178,10 +180,10 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>
-      </AdditionalManifestFiles>
+      <AdditionalManifestFiles>dpiaware.manifest</AdditionalManifestFiles>
       <AssemblyIdentity>
       </AssemblyIdentity>
+      <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
     <PostBuildEvent>
       <Message>Building help file...</Message>
@@ -207,6 +209,7 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;_DEBUG;_M_AMD64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -223,10 +226,10 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>
-      </AdditionalManifestFiles>
+      <AdditionalManifestFiles>dpiaware.manifest</AdditionalManifestFiles>
       <AssemblyIdentity>
       </AssemblyIdentity>
+      <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
     <PostBuildEvent>
       <Message>Building help file...</Message>
@@ -256,6 +259,7 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;NDEBUG;_M_AMD64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -275,10 +279,10 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>
-      </AdditionalManifestFiles>
+      <AdditionalManifestFiles>dpiaware.manifest</AdditionalManifestFiles>
       <AssemblyIdentity>
       </AssemblyIdentity>
+      <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
     <PostBuildEvent>
       <Message>Building help file...</Message>
@@ -537,6 +541,7 @@ makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.
     <CustomBuild Include="VarUtils.H" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DPIHelper.h" />
     <ClInclude Include="hlp\popups.h" />
   </ItemGroup>
   <ItemGroup>
@@ -613,6 +618,11 @@ makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TCProps\TCProps.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="dpiaware.manifest">
+      <SubType>Designer</SubType>
+    </Manifest>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,7 +28,7 @@ CSize CMacroDialogBar::CalcFixedLayout( BOOL tStretch, BOOL tHorz )
 
    size = CDialogBar::CalcFixedLayout( tStretch, tHorz );
 
-   size.cy = 23;
+   size.cy = g_dpi.Scale(23);
 
    return( size );
 }

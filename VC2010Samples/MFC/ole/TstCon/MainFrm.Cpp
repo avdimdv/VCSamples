@@ -103,6 +103,10 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	  return( -1 );
    }
 
+   m_wndToolBar.SetSizes(CSize(g_dpi.Scale(23), g_dpi.Scale(23)), CSize(g_dpi.Scale(16), g_dpi.Scale(16)));
+   auto hScaledBitmap = g_dpi.LoadAndScaleBitmap(AfxGetResourceHandle(), MAKEINTRESOURCE(IDR_MAINFRAME));
+   m_wndToolBar.SetBitmap(hScaledBitmap);
+
    if( !m_wndMacroBar.Create( this, CBRS_SIZE_FIXED|CBRS_ALIGN_TOP, IDC_MACROBAR ) )
    {
 	  TRACE( "Failed to create macro bar\n" );
