@@ -104,42 +104,6 @@
     <Import Project="$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props" Condition="'$(Configuration)|$(Platform)'=='Release|X64' and (exists('$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props'))" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>false</LinkIncremental>
-    <EmbedManifest>true</EmbedManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>false</LinkIncremental>
-    <EmbedManifest>true</EmbedManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>false</LinkIncremental>
-    <EmbedManifest>true</EmbedManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">
-    <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
-    <LinkIncremental>false</LinkIncremental>
-    <EmbedManifest>true</EmbedManifest>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -644,7 +608,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -654,7 +618,7 @@ echo.
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -670,7 +634,7 @@ echo.
       <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -680,7 +644,7 @@ echo.
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -696,7 +660,7 @@ echo.
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -706,7 +670,7 @@ echo.
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -722,7 +686,7 @@ echo.
       <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
@@ -732,7 +696,7 @@ echo.
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
-copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
+copy "hlp\tstcon32.chm" "$(OutDir)tstcon.chm"
 goto :HelpDone
 :HelpError
 echo hlp\tstcon32.hhp(1) : error:Problem encountered creating help file
