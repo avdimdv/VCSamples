@@ -25,12 +25,12 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Relese.Unicode|Win32">
-      <Configuration>Relese.Unicode</Configuration>
+    <ProjectConfiguration Include="Release.Unicode|Win32">
+      <Configuration>Release.Unicode</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Relese.Unicode|x64">
-      <Configuration>Relese.Unicode</Configuration>
+    <ProjectConfiguration Include="Release.Unicode|x64">
+      <Configuration>Release.Unicode</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -58,7 +58,7 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
@@ -82,7 +82,7 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
@@ -117,7 +117,7 @@
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">
     <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>true</EmbedManifest>
@@ -135,7 +135,7 @@
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">
     <OutputFile>$(OutDir)TstCon32.exe</OutputFile>
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>true</EmbedManifest>
@@ -290,7 +290,7 @@
       <Command>makehelp.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -489,7 +489,7 @@
       <Command>makehelp.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -579,17 +579,17 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|X64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|X64'">stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="TabOrdDg.Cpp" />
     <ClCompile Include="TCDoc.Cpp" />
@@ -610,11 +610,11 @@
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TstCon_i.C</InterfaceIdentifierFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">TstCon_i.C</InterfaceIdentifierFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">Win32</TargetEnvironment>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">Win32</TargetEnvironment>
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TstConIF.H</HeaderFileName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">TstConIF.H</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">TstConIF.H</HeaderFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TstCon_i.C</InterfaceIdentifierFileName>
-      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">TstCon_i.C</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">TstCon_i.C</InterfaceIdentifierFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">X64</TargetEnvironment>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">X64</TargetEnvironment>
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">TstConIF.H</HeaderFileName>
@@ -622,11 +622,11 @@
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">TstCon_i.C</InterfaceIdentifierFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">TstCon_i.C</InterfaceIdentifierFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|X64'">X64</TargetEnvironment>
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">X64</TargetEnvironment>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">X64</TargetEnvironment>
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|X64'">TstConIF.H</HeaderFileName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">TstConIF.H</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">TstConIF.H</HeaderFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|X64'">TstCon_i.C</InterfaceIdentifierFileName>
-      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">TstCon_i.C</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">TstCon_i.C</InterfaceIdentifierFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>
@@ -667,7 +667,7 @@ echo.
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Making help file...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">Making help file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
 copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
@@ -678,7 +678,7 @@ echo.
 :HelpDone
 echo.
 </Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
 copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
 goto :HelpDone
@@ -689,9 +689,9 @@ echo.
 echo.
 </Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">Making help file...</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
@@ -719,7 +719,7 @@ echo.
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|X64'">Making help file...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">Making help file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">Making help file...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
 copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
@@ -730,7 +730,7 @@ echo.
 :HelpDone
 echo.
 </Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">if not "%NOBUILDHELP%" == "1" start /wait hhc "hlp\tstcon32.hhp"
 if not exist "hlp\tstcon32.chm" goto :HelpError
 copy "hlp\tstcon32.chm" "$(OutDir)tstcon32.chm"
 goto :HelpDone
@@ -741,9 +741,9 @@ echo.
 echo.
 </Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|X64'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|X64'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">$(OutDir)$(ProjectName).chm;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="IFacesPg.H" />
     <CustomBuild Include="InsCtlDg.H" />
@@ -805,7 +805,7 @@ makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating map file for help compiler...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">Generating map file for help compiler...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">Generating map file for help compiler...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
 echo. &gt; "hlp\HTMLDefines.h"
 echo // Commands (ID_* and IDM_*) &gt;&gt; "hlp\HTMLDefines.h"
@@ -823,7 +823,7 @@ echo. &gt;&gt; "hlp\HTMLDefines.h"
 echo // Frame Controls (IDW_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
 </Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
 echo. &gt; "hlp\HTMLDefines.h"
 echo // Commands (ID_* and IDM_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h ID_,HID_,0x10000 IDM_,HIDM_,0x10000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
@@ -841,7 +841,7 @@ echo // Frame Controls (IDW_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
 </Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">Generating map file for help compiler...</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">Generating map file for help compiler...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
@@ -881,7 +881,7 @@ makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|X64'">Generating map file for help compiler...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">Generating map file for help compiler...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">Generating map file for help compiler...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|X64'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
 echo. &gt; "hlp\HTMLDefines.h"
 echo // Commands (ID_* and IDM_*) &gt;&gt; "hlp\HTMLDefines.h"
@@ -899,7 +899,7 @@ echo. &gt;&gt; "hlp\HTMLDefines.h"
 echo // Frame Controls (IDW_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
 </Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">echo // Generated Help Map file.  Used by tstcon32.HHP. &gt; "hlp\HTMLDefines.h"
 echo. &gt; "hlp\HTMLDefines.h"
 echo // Commands (ID_* and IDM_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h ID_,HID_,0x10000 IDM_,HIDM_,0x10000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
@@ -917,7 +917,7 @@ echo // Frame Controls (IDW_*) &gt;&gt; "hlp\HTMLDefines.h"
 makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.h"
 </Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|X64'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">hlp\HTMLDefines.h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="resource.hm" />
     <CustomBuild Include="res\macro.ico" />
@@ -950,11 +950,11 @@ makehm /h /a afxhh.h IDW_,HIDW_,0x50000 "%(Identity)" &gt;&gt; "hlp\HTMLDefines.
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug;Debug;TCProps\Debug;$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|Win32'">.\Debug;Debug;TCProps\Debug;$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|Win32'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|Win32'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">.\Debug;Debug;TCProps\Debug;$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug.Unicode|X64'">.\Debug;Debug;TCProps\Debug;$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|X64'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Relese.Unicode|X64'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release.Unicode|X64'">.\Release;Release;TCProps\Release;$(OUTDIR)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
